@@ -30,6 +30,7 @@ a {
     height: 3rem;
     padding-left: 4rem;
     padding-right: 4rem;
+    z-index: 2;
 }
 .nav__logo {
     display: flex;
@@ -106,6 +107,7 @@ background-color: #101010;
 }
   .hover-image-scale img:hover {
     transform: scale(1.2); 
+    z-index: -1;
 }
 .title {
     background-color: #557aa5;
@@ -137,9 +139,11 @@ background-color: #101010;
     }
     .nav__menu.active {
         left: 0;
+        z-index: 3;
     }
     .nav__item{
         margin: 2.5rem 0;
+        z-index: 1;
     }
     .burg{
         display: block;
