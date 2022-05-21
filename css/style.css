@@ -14,16 +14,20 @@ ul {
 li {
     list-style: none;
 }
-a{
+a {
     text-decoration: none;
+    position: relative;
 }
 .header {
+    width: 100%;
+    position: fixed;
+    background-color: #5D5C61;
 }
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 8rem;
+    height: 3rem;
     padding-left: 4rem;
     padding-right: 4rem;
 }
@@ -35,7 +39,19 @@ a{
     justify-content: space-between;
     align-items: center;
 }
-.nav__item {
+.nav__item a::before{
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: #379683;
+    transition: 0.4s;
+    transform: scaleX(0);
+}
+.nav__item a:hover:before{
+    transform: scaleX(1);
 }
 .burg{
     display: none;
@@ -51,48 +67,73 @@ background-color: #101010;
 .href {
     font-size: 1.4rem;
     font-weight: 400;
-    color: #475569;
+    color:  #B1A296;
     margin-right: 1.4rem;
 }
 .href:hover{
-    color: #482ff4;
+    color: #379683;
 }
 .href::last-child{
     margin-right: 0;
 }
 .wrapper {
+    background-color: #557aa5;
 }
 .container {
     text-align: center;
     padding: 5px;
-    margin: 5px;
 }
 .gallery {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+    padding: 35px;
     justify-content: center;
-    background-color: #e7efef;
+    background-color: #557aa5;
 }
 .gallery img {
     padding: 5px;
     margin: 5px;
+    cursor: pointer;
+}
+.hover-image-scale {
+    display: inline-block; 
+    overflow: hidden; 
+}
+  .hover-image-scale img {
+    transition: 1.2s; 
+    display: block; 
+}
+  .hover-image-scale img:hover {
+    transform: scale(1.2); 
 }
 .title {
+    background-color: #557aa5;
+}
+.title h1 {
+    padding: 15px;
+    color: #B1A296;
+    background: linear-gradient(180deg, #557a95, #333, #557a95);
+    
+}
+.title h2 {
+    padding: 15px;
+    
+    
 }
 .text {
+    padding: 10px;
 }
 @media only screen and (max-width: 1218px) {
     .nav__menu{
         position: fixed;
         flex-direction: column;
-        background-color: #d6eeee;
+        background-color: #5D5C61;
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.7);
         left: -100%;
-        top: 8rem;
+        top: 2.8rem;
     }
     .nav__menu.active {
         left: 0;
